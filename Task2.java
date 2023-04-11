@@ -45,11 +45,8 @@ public class Task2 {
 
     }
 
-    public static boolean realOrNot(int[][] array, int curr, int dest) {
+    public static boolean realOrNot(int[][] array, int currentPosition, int destination) {
         /////// index definition
-
-        int currentPosition = curr;
-        int destination = dest;
 
         int xFrom = -1;
         int yFrom = -1;
