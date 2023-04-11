@@ -1,6 +1,4 @@
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Task2 {
     /*
@@ -11,10 +9,10 @@ public class Task2 {
 
         int[][] array = chessDeskFill();
 
-        System.out.print("Enter current position:");
+        System.out.print("Enter current position(int values only):");
         int curr = new Scanner(System.in).nextInt();
 
-        System.out.print("Enter required position:");
+        System.out.print("Enter required position(int values only):");
         int dest = new Scanner(System.in).nextInt();
 
         System.out.println(realOrNot(array, curr, dest));
@@ -73,18 +71,11 @@ public class Task2 {
         /////// is possible move
 
         boolean isPossible = false;
-        int oneStep = 1;
-        int twoStep = 2;
 
-        if (xTo == xFrom - oneStep && yTo == yFrom - twoStep
-                || xTo == xFrom + oneStep && yTo == yFrom - twoStep
-                || xTo == xFrom + twoStep && yTo == yFrom - oneStep
-                || xTo == xFrom + twoStep && yTo == yFrom + oneStep
-                || xTo == xFrom + oneStep && yTo == yFrom + twoStep
-                || xTo == xFrom - oneStep && yTo == yFrom + twoStep
-                || xTo == xFrom - twoStep && yTo == yFrom + oneStep
-                || xTo == xFrom - twoStep && yTo == yFrom - oneStep
-        ) {
+        if (    (xTo == xFrom - 2 || xTo == xFrom + 2) && (yTo == yFrom - 1 || yTo == yFrom + 1)
+             || (xTo == xFrom + 1 || xTo == xFrom - 1)&& (yTo == yFrom - 2 || yTo == yFrom + 2) )
+
+        {
             isPossible = true;
         }
         return isPossible;
